@@ -1,0 +1,17 @@
+.navbar{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color:rgb(54, 44, 130);
+    color: rgb(214, 107, 25);
+}
+.btn {
+    display:flex;
+    gap:30px;
+}
+.btn button{
+    border-radius: 15px;
+    padding:5px 15px ;
+    background-color: rgba(117, 57, 121, 0.988);
+    color:rgb(234, 234, 224)
+}
