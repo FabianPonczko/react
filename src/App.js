@@ -2,14 +2,18 @@
 import './App.css';
 import Navbar from './Component/Navbar/Navbar';
 import ItemListContainer from './Component/ItemListContainer/ItemListContainer'
-
+import ItemCountList from './Component/ItemCountList/itemCountList';
 
 function App() {
+
+  const textToButton=()=>{console.log("Agregar al carrito")}
   return (
       
     <div className='app'>
       <Navbar /> 
-      <ItemListContainer greeting="Productos Seleccionados!" />
+      <div className="ItemList">
+        <ItemListContainer greeting="Productos Seleccionados!" />
+      </div>
     </div>
   )
 }
