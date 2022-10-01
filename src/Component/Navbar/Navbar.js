@@ -11,7 +11,7 @@ const Navbar = () =>{
             <div className="btn">
                 <button>Monitores</button>
                 <button>Teclados</button>
-                <button>Notebook</button>
+                <button>Notebooks</button>
             </div>
             <CartWidget/>
         </nav>

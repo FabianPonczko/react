@@ -31,7 +31,7 @@ useEffect(()=>{
         <div className="list">
             <h1>{greeting}</h1>
             {/* {<ItemCountList inicial= {0} stock={10} text={textToButton}/> } */}
-            <h2>{loading}</h2>
+            <h3>{loading}</h3>
             <ItemList products={product} />
 
         </div>
