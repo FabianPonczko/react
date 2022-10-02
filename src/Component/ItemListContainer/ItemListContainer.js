@@ -1,18 +1,18 @@
 import { useState ,useEffect } from "react"
-import ItemCountList from "../ItemCountList/itemCountList"
 import { getProducts } from "../asyncMock/asyncMock"
 import ItemList from "../ItemList/ItemList"
-
-const textToButton=()=>{console.log("Agregar al carrito")}
+import './ItemListContainer.css'
+import {useParams } from "react-router-dom"
 
 const ItemListContainer =({greeting})=>{
-    const [product,setProduct] = useState([])
+    const [products,setProducts] = useState([])
     const [loading,setLoading] = useState(true)
+    const {categoryId} = useParams()
  
 useEffect(()=>{
-    getProducts()
-    .then(res =>{
-        setProduct(res)    
+    setLoading(true)
+    getProducts(categoryId).then(products =>{
+        setProducts(products)    
     }
     ).catch(error=>{
         console.log(error)
@@ -20,7 +20,7 @@ useEffect(()=>{
     .finally(() =>{
         setLoading(false)
     })
-},[])
+},[categoryId])
 
     if(loading)
         return <h1>Loading...</h1>
@@ -28,12 +28,11 @@ useEffect(()=>{
 
 
     return(
-        <div className="list">
-            <h1>{greeting}</h1>
-            {/* {<ItemCountList inicial= {0} stock={10} text={textToButton}/> } */}
+    
+        <div>
+            <h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1>    
             <h3>{loading}</h3>
-            <ItemList products={product} />
-
+            <ItemList products={products} />
         </div>
     )
 }

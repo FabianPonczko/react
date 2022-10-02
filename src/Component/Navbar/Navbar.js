@@ -1,17 +1,36 @@
 
 import "./Navbar.css"
 import CartWidget from "../CartWidget/CartWidget"
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Navbar = () =>{
     return (
         <nav className="navbar">
             <div>
-                <h1>FoxX-Computación</h1>
+                <Link style= {{color:'white'}}to='/'>
+                    <h1>FoxX-Computación</h1>
+                </Link>
             </div>
             <div className="btn">
-                <button>Monitores</button>
-                <button>Teclados</button>
-                <button>Notebooks</button>
+                <Link to={"/category/Monitores"}>
+                    <Button>
+                        Monitores
+                    </Button>
+                </Link>
+                <Link to={"/category/Teclados"}>
+                    <Button>
+                        Teclados
+                    </Button>
+                </Link>
+                <Link to={"/category/Notebooks"}>
+                    <Button>
+                        Notebooks
+                    </Button>
+                </Link>
+                <Link to={"/category/Placas"}>
+                    <Button>Placas</Button>
+                </Link>
             </div>
             <CartWidget/>
         </nav>

@@ -4,6 +4,7 @@
     align-items:center;
     background-color:rgb(54, 44, 130);
     color: rgb(214, 107, 25);
+    
 }
 .btn {
     display:flex;
@@ -14,4 +15,7 @@
     padding:5px 15px ;
     background-color: rgba(117, 57, 121, 0.988);
     color:rgb(234, 234, 224)
+}
+a:link{
+    text-decoration: none;
 }

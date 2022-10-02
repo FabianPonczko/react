@@ -1,11 +1,16 @@
-import {Card} from "react-bootstrap"
-import Button from "react-bootstrap/Button"
+import Item from "../Item/Item"
+
+
 const ItemList = ({products}) =>{
     
     return (
 
-       products.map(product=> <li>{product.titulo}</li>)
-    
+        <div style ={{display:'flex',width:'90vw',gap:'5px',justifyContent:'center'}}>
+            {products.map(product=> (
+                <Item key= {product.id} prod= {product}/>
+            ))}
+        </div>
+       
     )
 }
 export default ItemList
