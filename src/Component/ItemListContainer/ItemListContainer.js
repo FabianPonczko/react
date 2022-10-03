@@ -32,6 +32,9 @@ useEffect(()=>{
         <div>
             <h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1>    
             <h3>{loading}</h3>
+            <div style={{display:'flex',justifyContent:'center'}}>
+                {categoryId?<h3>{categoryId}</h3>:null}
+            </div>
             <ItemList products={products} />
         </div>
     )

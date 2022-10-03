@@ -5,7 +5,7 @@ const ItemList = ({products}) =>{
     
     return (
 
-        <div style ={{display:'flex',width:'90vw',gap:'5px',justifyContent:'center'}}>
+        <div style ={{display:'flex',width:'90vw',gap:'5px',justifyContent:'center',alignItems:'center'}}>
             {products.map(product=> (
                 <Item key= {product.id} prod= {product}/>
             ))}
