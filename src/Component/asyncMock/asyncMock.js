@@ -166,7 +166,7 @@ const products = [
     "descripcion":"Dual channel, 2x DDR4 DIMM sockets hasta 32GB",
     "precio": 8500,
     "cantidad": 2,
-    "imagen":"../images//assets/motherboard_galax.jpeg",
+    "imagen":"../images/assets/motherboard_galax.jpeg",
     "altImagen":"motherboard Galax"
 },
 {
