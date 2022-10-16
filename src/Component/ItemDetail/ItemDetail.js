@@ -1,35 +1,37 @@
-import { Button } from "react-bootstrap"
 import { Card } from "react-bootstrap"
-import { useState,useEffect } from "react"
-
+import { useState,useContext } from "react"
+import ItemCount from "../ItemCount/ItemCount"
+import { context } from '../../App'
 
 const ItemDetail = ({detailProduct})=>{
-    const [product,setProduct] = useState(detailProduct)
-    const [loading,setLoading] = useState(true)
-     
-  
-useEffect(()=>{
-    setLoading(false)
-    setProduct(detailProduct)
-},[detailProduct])
+    const [productToAdd,setProductToAdd] = useState(detailProduct)
+    const {addItem} = useContext(context)
+    const {cantidad} = detailProduct
 
-if(loading){
-    return <h1>Loading...</h1>
+const handleOnAdd =(quantity)=>{
+    setProductToAdd(productToAdd)
+
+    productToAdd.quantity = quantity
+    addItem(productToAdd)
 }
 
+
+console.log(productToAdd.quantity)
 return (
         
-        <div style={{display:'flex',gap:'15px'}}>
+        <div className='text-center' style={{display:'flex',gap:'15px'}}>
           
-                <Card key= {product.id} style={{ width: '15rem '}}>
-                <Card.Img  variant="top" src={product.imagen} />
+                <Card key= {productToAdd.id} style={{ width: '15rem '}}>
+                <Card.Img variant="top" src={productToAdd.imagen} />
                 <Card.Body>
-                <Card.Title>{product.titulo}</Card.Title>
+                <Card.Title>{productToAdd.titulo}</Card.Title>
                 <Card.Text>
-                    {product.descripcion}
+                    {productToAdd.descripcion}
                 </Card.Text>
                 
                 </Card.Body>
+                {productToAdd.quantity===undefined?(<ItemCount inicial= {1} stock={cantidad} onAdd={handleOnAdd}/>):(<button class=" d-grid col-8 mx-auto btn btn-success">Finalizar compra</button>)}
+                
             </Card>
            
             

@@ -3,8 +3,12 @@ import "./Navbar.css"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
+import {context} from '../../App'
+import { useContext } from "react";
 
 const Navbar = () =>{
+const {cart} = useContext(context)
+
     return (
         <nav className="navbar">
             <div>
@@ -32,7 +36,7 @@ const Navbar = () =>{
                     <Button>Placas</Button>
                 </Link>
             </div>
-            <CartWidget/>
+            <CartWidget count={cart}/>
         </nav>
     );
 }
