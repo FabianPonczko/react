@@ -14,12 +14,12 @@ const Item = ({prod})=>{
                 <Row >
                     <Col  >
                         <Card  style={{ width: '15rem ',height:'25rem'}}>
-                            <Card.Img variant="top" src={prod.imagen} />
+                            <Card.Img variant="top" src={prod.img} />
                             <Card.Body  >
-                                <Card.Title>{prod.titulo}</Card.Title>
-                                <Card.Text>{`$${prod.precio}`}</Card.Text>
+                                <Card.Title>{prod.title}</Card.Title>
+                                <Card.Text>{`$${prod.price}`}</Card.Text>
                                 <Link to={`/detail/${prod.id}`}>
-                                    <button class=" d-grid col-8 mx-auto btn btn-primary">Detalle</button>
+                                    <button className=" d-grid col-8 mx-auto btn btn-primary">Detalle</button>
                                 </Link> 
                             </Card.Body>
                         </Card>
