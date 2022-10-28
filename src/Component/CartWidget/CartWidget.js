@@ -1,6 +1,7 @@
 import "./CartWidget.css"
 import { useContext } from "react";
 import { context } from "../../App";
+import { Link } from "react-router-dom";
 
 const CartWidget= ()=>{
 
@@ -10,8 +11,10 @@ const CartWidget= ()=>{
 
     return(
         <div>
-            <img className="cart" src="/images/cart-removebg-preview.png" alt="cart" />
-        {totalProduct}
+            <Link to={`/cart`}>
+                <img className="cart" src="/images/cart-removebg-preview.png" alt="cart" />
+            </Link> 
+                {totalProduct}
         </div>
     )
 };

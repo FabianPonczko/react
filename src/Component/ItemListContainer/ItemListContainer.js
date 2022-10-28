@@ -6,7 +6,7 @@ import {useParams } from "react-router-dom"
 import {collection, getDocs,query,where} from 'firebase/firestore'
 import { db } from "../../services/firebase"
 
-let collectionRef = []
+
 const ItemListContainer =({greeting})=>{
     const [products,setProducts] = useState([])
     const [loading,setLoading] = useState(true)
@@ -14,18 +14,14 @@ const ItemListContainer =({greeting})=>{
  
 useEffect(()=>{
     setLoading(true)
-    if(categoryId){
-        collectionRef=query( collection(db,'products'),where('category', '==',categoryId))
-    }
-    else{
-        collectionRef=collection(db,'products')
-    }
+    const collectionRef= categoryId ? query( collection(db,'products'),where('category', '==',categoryId)) : collection(db,'products')
+    
     
     // query( collection(db,'products'),where('category', '==',categoryId))
     // collection(db,'products')
 
     getDocs(collectionRef).then(response=>{
-        console.log(response)
+        
         const productsAdapted = response.docs.map(doc =>{
             const data = doc.data()
             return { id: doc.id, ...data}

@@ -25,12 +25,7 @@ const ItemDetailContainer = ()=>{
             }).catch((error)=>{
                 console.log(error) //esto hay que mejorarlo
             }).finally(()=>setLoading(false))
-            console.log({products})
         
-        // getProduct(productId).then(product=>{
-        //     setProduct(product)
-        //     setLoading(false)
-        // })
 
     },[productId])
 

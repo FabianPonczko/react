@@ -1,13 +1,13 @@
 import { Card } from "react-bootstrap"
-import { useState,useContext } from "react"
+import { useState,useContext} from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { context } from '../../App'
 
 
 const ItemDetail = ({detailProduct})=>{
     const [productToAdd,setProductToAdd] = useState(detailProduct)
-    const {addItem} = useContext(context)
-    const {stock} = detailProduct
+    const {addItem,getProductQuantity} = useContext(context)
+    const {stock,id} = detailProduct
 
 const handleOnAdd =(stock)=>{
     setProductToAdd(productToAdd)
@@ -15,9 +15,10 @@ const handleOnAdd =(stock)=>{
     productToAdd.quantity = stock
     addItem(productToAdd)
 }
+const productAddedQuantity = getProductQuantity(id)
+console.log({productAddedQuantity})
 
 
-console.log(productToAdd.quantity)
 return (
         
         <div className='text-center' style={{display:'flex',gap:'15px'}}>
@@ -31,7 +32,7 @@ return (
                 </Card.Text>
                 
                 </Card.Body>
-                {productToAdd.quantity===undefined?(<ItemCount inicial= {1} stock={stock} onAdd={handleOnAdd}/>):(<button class=" d-grid col-8 mx-auto btn btn-success">Finalizar compra</button>)}
+                {productToAdd.quantity===undefined?(<ItemCount inicial= {productAddedQuantity} stock={stock} onAdd={handleOnAdd}/>):(<button className=" d-grid col-8 mx-auto btn btn-success">Finalizar compra</button>)}
                 
             </Card>
            
