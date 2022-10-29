@@ -43,9 +43,9 @@ useEffect(()=>{
 },[categoryId])
 
     if(loading)
-        return <div class="d-flex align-items-center">
+        return <div className="d-flex align-items-center">
         <strong>Loading...</strong>
-        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
       </div>
         
 
@@ -53,7 +53,8 @@ useEffect(()=>{
     return(
     
         <div>
-            <h2 style={{display:'flex',justifyContent:'center',marginTop:'20px'}}>{greeting}</h2>    
+            {greeting?<h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(54, 44, 130, 0.9)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "20px"}}>{greeting}</h2>:null }
+            {/* <h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(117, 57, 121, 0.988)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "25px"}}>{greeting}</h2>     */}
             <h3>{loading}</h3>
             <div style={{display:'flex',justifyContent:'center'}}>
                 {categoryId?<h3>{categoryId}</h3>:null}

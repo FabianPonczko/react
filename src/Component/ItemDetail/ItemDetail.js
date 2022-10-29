@@ -36,10 +36,10 @@ return (
         
         <div className='text-center' style={{display:'flex',gap:'15px'}}>
           
-                <Card key= {productToAdd.id} style={{ width: '18rem '}}>
+                <Card key= {productToAdd.id} style={{ width: '16rem '}}>
                 <Card.Img variant="top" src={productToAdd.img} />
                 <Card.Body>
-                <Card.Title>{productToAdd.title}</Card.Title>
+                <Card.Title></Card.Title>
                 <Card.Text>
                     {productToAdd.description}
                 </Card.Text>
@@ -49,7 +49,7 @@ return (
                 ?
                 <ItemCount inicial= {productAddedQuantity} stock={stock} onAdd={handleOnAdd}/>
                 :  <Link to={"/cart"}>
-                    <button className=" d-grid col-8 mx-auto btn btn-success">Finalizar compra</button>
+                    <button className="mb-2 d-grid col-8 mx-auto btn btn-success">Finalizar compra</button>
                  </Link>}
                 
             </Card>

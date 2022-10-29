@@ -7,7 +7,7 @@ export const CartContext = createContext()
 export const CartContextProvider = ({children})=>{
 
     const [cart, setCart] = useState([])
-    const [buyer, setBuyer] = useState([])
+    const [buyer, setBuyer] = useState({})
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [total, setTotal] = useState(0)
     
@@ -97,7 +97,7 @@ export const CartContextProvider = ({children})=>{
     }
 
     const clearCart = (Message) => {
-        Message="clearWithOutMessage"? setCart([])
+        Message=="clearWithOutMessage"? setCart([])
         :
         swal({
             title: "Esta seguro?",

@@ -31,17 +31,17 @@ const ItemDetailContainer = ()=>{
 
 if(loading){
     return(
-        <div class="d-flex align-items-center">
+        <div className="d-flex align-items-center">
         <strong>Loading...</strong>
-        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+        <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
       </div>
         
     )
 }
 
     return(
-            <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
-                <h2>Detalle del producto</h2>
+            <div style={{display:'flex',alignItems:'center',flexDirection:'column' }}>
+                <h2 className="m-3" style={{ fontFamily: 'Times New Roman ,Times, serif',fontSize: "35px"}}>{products.title}</h2>
             <ItemDetail  detailProduct= {products} />
             </div>
            

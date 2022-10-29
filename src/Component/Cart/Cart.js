@@ -25,8 +25,9 @@ console.log(`llego cart:${cart}`)
     }
 
     return (     
+        
         <div >
-             <h3 style={{display:'flex',justifyContent:'center',margin:"25px 25px"}}>Lista de productos en el carrito de compras</h3>
+             <h3 style={{display:'flex',justifyContent:'center',margin:"25px 25px" , fontFamily: 'Times New Roman ,Times, serif',fontSize: "35px"}}>Lista de productos en el carrito de compras</h3>
             { cart.map(prod => <CartItem key={prod.id} {...prod}/>) }
             
         <div style={{display:'flex',justifyContent:'space-around',marginTop:"25px"}}>
@@ -36,6 +37,8 @@ console.log(`llego cart:${cart}`)
             <button className=" d-grid col-2 mx-auto btn btn-warning"onClick={() => clearCart()} >Limpiar carrito</button>
         </div>
         </div>
+
+        
     )
     }
 

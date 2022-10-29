@@ -68,7 +68,7 @@ function App() {
             <Navbar /> 
             <div className="ItemList">
               <Routes>
-                  <Route path='/' element={<ItemListContainer greeting="- Productos Destacados -"/> } />
+                  <Route path='/' element={<ItemListContainer greeting="- Productos Seleccionados -"/> } />
                   <Route path='/category/:categoryId' element={<ItemListContainer />} />
                   <Route path='/detail/:productId' element={<ItemDetailContainer/>} />
                   <Route path='/cart' element={<Cart/>} />

@@ -23,7 +23,7 @@ const ItemCount = ({inicial=1,stock,onAdd}) =>{
                     <button className="col-2 mx-auto btn btn-primary" onClick={increment} >+</button>
                     <button className="col-2 mx-auto btn btn-primary" onClick={decrement} >-</button>
                </div>
-                    <button className="col mx-auto btn btn-primary " onClick={()=> onAdd(quantity)}>Agregar</button>
+                    <button className="mb-1 col mx-auto btn btn-primary " onClick={()=> onAdd(quantity)}>Agregar</button>
             </div>
     )
 }
