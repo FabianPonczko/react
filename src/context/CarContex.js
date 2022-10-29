@@ -95,40 +95,62 @@ export const CartContextProvider = ({children})=>{
           });
     
     }
-
-    const clearCart = (Message) => {
-        Message=="clearWithOutMessage"? setCart([])
-        :
+    const productOutStock =()=>{
         swal({
-            title: "Esta seguro?",
-            text: "Eliminara todos los productos del carrito!",
-            icon: "warning",
-            showCancelButton: true,
-            buttons: true,
+            title: "Error",
+            text: "Se encontraron productos fuera de stock",
+            icon: "error",
             dangerMode: true,
-          }).then((isConfirm)=> {
-            if (isConfirm) {
-                swal({
-                    text: "Productos Eliminados!",
-                    icon: "success",
-                    buttons: false,
-                    timer: 1500,
-                });
-                setCart([])
-            } else {
-                swal({
-                    text: "Eliminacion Cancelada!",
-                    icon: "success",
-                    buttons: false,
-                    timer: 1500,
-                });
-            }
+            footer: '<p>hola</p>'
+          }).then(()=>{
+            swal({
+                text: "Revisar carrito",
+                icon: "warning",
+                buttons: false,
+                timer: 1500,
+              })
           })
+         
+    }
+    const clearCart = (Message,order) => {
+        if(Message=="clearWithOutMessage"){
+            setCart([])
+            swal({
+                text: `Orden Nº: ${order} generada con exito!!!`,
+                icon: "success",
+            });
+        }else{
+            swal({
+                title: "Esta seguro?",
+                text: "Eliminara todos los productos del carrito!",
+                icon: "warning",
+                showCancelButton: true,
+                buttons: true,
+                dangerMode: true,
+              }).then((isConfirm)=> {
+                if (isConfirm) {
+                    swal({
+                        text: "Productos Eliminados!",
+                        icon: "success",
+                        buttons: false,
+                        timer: 1500,
+                    });
+                    setCart([])
+                } else {
+                    swal({
+                        text: "Eliminacion Cancelada!",
+                        icon: "error",
+                        buttons: false,
+                        timer: 1500,
+                    });
+                }
+              })
+        }
         
       }
 
       return (
-        <CartContext.Provider value={{ cart, addItem, getProductToDelete, getProductQuantity, getTotalQuantity, clearCart, totalQuantity, total ,buyer ,setBuyer}}>
+        <CartContext.Provider value={{ cart, addItem, getProductToDelete, getProductQuantity, getTotalQuantity, clearCart, totalQuantity, total ,buyer ,setBuyer,productOutStock}}>
             {children}
         </CartContext.Provider>
     )

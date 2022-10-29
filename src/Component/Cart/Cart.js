@@ -32,9 +32,9 @@ console.log(`llego cart:${cart}`)
             
         <div style={{display:'flex',justifyContent:'space-around',marginTop:"25px"}}>
 
-            <Link to='/checkout' className='d-grid col-4 mx-auto btn btn-success'>Checkout</Link>
+            <Link to='/checkout' className='shadow d-grid col-4 mx-auto btn btn-success'>Checkout</Link>
             <h3>Total: ${total}</h3>
-            <button className=" d-grid col-2 mx-auto btn btn-warning"onClick={() => clearCart()} >Limpiar carrito</button>
+            <button className="shadow d-grid col-2 mx-auto btn btn-warning"onClick={() => clearCart()} >Limpiar carrito</button>
         </div>
         </div>
 

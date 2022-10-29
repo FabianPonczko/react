@@ -6,10 +6,11 @@ import { db } from '../../services/firebase'
 import UserForn from "../UserForm/UserForm";
 import { Card } from "react-bootstrap";
 
+
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart, total, clearCart ,buyer} = useContext(CartContext)
+    const { cart, total, clearCart ,buyer,productOutStock} = useContext(CartContext)
     // const { cart, total, clearCart } = useContext(context)
     
 // useEffect(()=>{
@@ -59,8 +60,10 @@ const Checkout = () => {
                 console.log(`El id de su orden es: ${orderAdded.id}`)
                 const OrderId = orderAdded.id
                 clearCart("clearWithOutMessage",OrderId)
+                
             } else {
                 console.log('Hay productos fuera de stock')
+                productOutStock()
             }
         } catch (error) {
             console.log(error)
