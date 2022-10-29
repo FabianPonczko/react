@@ -1,22 +1,22 @@
 import { useState, useContext } from "react"
-import { CartContext } from "../../context/CartContext"
+import { CartContext } from "../../context/CarContex";
+import { context } from "../../App";
 import { getDocs, addDoc, collection, doc, updateDoc, where, query, documentId, writeBatch } from 'firebase/firestore'
 import { db } from '../../services/firebase'
+import UserForn from "../UserForm/UserForm";
+
 
 const Checkout = () => {
     const [loading, setLoading] = useState(false)
 
-    const { cart, total, clearCart } = useContext(CartContext)
+    const { cart, total, clearCart ,buyer} = useContext(CartContext)
+    // const { cart, total, clearCart } = useContext(context)
 
     const createOrder = async () => {
         setLoading(true)
         try {
             const objOrder = {
-                buyer: {
-                    name: 'Sebastian Zuviria',
-                    phone: '123456789',
-                    email: 'contact@sebaz.io'
-                },
+                buyer,
                 items: cart,
                 total
             }
@@ -53,7 +53,8 @@ const Checkout = () => {
                 const orderAdded = await addDoc(orderRef, objOrder)
     
                 console.log(`El id de su orden es: ${orderAdded.id}`)
-                clearCart()
+                const OrderId = orderAdded.id
+                clearCart("clearWithOutMessage",OrderId)
             } else {
                 console.log('Hay productos fuera de stock')
             }
@@ -69,11 +70,13 @@ const Checkout = () => {
     }
 
     return (
-        <>
+        <div>
+            <UserForn/>
             <h1>Checkout</h1>
             <button onClick={createOrder}>Agregar documento</button>
             
-        </>
+        </div>
+        
     )
 }
 

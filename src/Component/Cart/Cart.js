@@ -1,68 +1,42 @@
 import { Card } from "react-bootstrap";
 import { useState, useContext, useEffect } from "react";
-import { context } from "../../App";
+// import { context } from "../../App";
+import { CartContext } from "../../context/CarContex";
+import CartItem from "../CartItem/CartItem";
+import { Link } from "react-router-dom";
 
 
 const Cart = ()=>{
-    const {cart} = useContext(context)
-    const {getProductToDelete} = useContext(context)
+    const {cart, clearCart, totalQuantity , total} = useContext(CartContext)
    
-
+console.log(`llego cart:${cart}`)
    
-    useEffect(()=>{
-        console.log({cart})
-    },[cart])
+    // useEffect(()=>{
+    //     console.log({cart})
+    // },[cart])
 
-    
-    return (
-            <div>
-            <h1  style={{display:'flex',justifyContent:'center'}}>Cart</h1>
-            {cart.map(product=> (
-                                <Card key={product.id} className="row mb-2 text-center shadow" style={{display:'grid', width: '80vw',height:'150px'}}>
+    if(totalQuantity  === 0) {
+        return (
+            <>
+            <br></br>
+            <h3>Tu carrito esta vacio!</h3>
+            </>
+        )
+    }
 
-                                <div style={{display:'flex',justifyItems:'center',alignItems:'center'}} >
-                                        <p className="id visually-hidden">{product.id}</p>
-                                    <div className="col-12 col-lg-2">
-                                        <img src={product.img} alt="" style={{width: '100px' }}></img>
-                                    </div>
-                                    <div className="col-12 col-lg">
-                                        <p>{product.title}</p>
-                                    </div>
-                                    <div className="col-12 col-lg precio">
-                                        <p>$ <span>{product.price} x unidad</span></p>
-                                    </div>
-                                    
-                                    <div className="col-12 col-lg precio">
-                                    <label>
-                                        Cantidad:    
-                                        <p> <span>{product.quantity}</span></p>
-                                        </label>
-                                    </div>
-                                    
-                                    <div className="col-6 col-lg">
-                                    <label>
-                                        Sub-total:
-                                        <p>${product.quantity * product.price}</p>
-
-                                        </label>
-
-                                    </div>
-                                    <div className="col-6 col-lg">
-                                        <a href="#">
-                                        <button  onClick={()=>getProductToDelete(product.id)}>
-                                            <span className="badge rounded-pill text-bg-danger fs-5">X</span>
-                                        </button>
-                                        </a>
-                                    </div>
-                                        
-                                </div>
+    return (     
+        <div >
+             <h3 style={{display:'flex',justifyContent:'center',margin:"25px 25px"}}>Lista de productos en el carrito de compras</h3>
+            { cart.map(prod => <CartItem key={prod.id} {...prod}/>) }
             
-                                </Card>
-                                )
+        <div style={{display:'flex',justifyContent:'space-around',marginTop:"25px"}}>
 
-                   )}
-                   </div>             
+            <Link to='/checkout' className='d-grid col-4 mx-auto btn btn-success'>Checkout</Link>
+            <h3>Total: ${total}</h3>
+            <button className=" d-grid col-2 mx-auto btn btn-warning"onClick={() => clearCart()} >Limpiar carrito</button>
+        </div>
+        </div>
     )
-            }
+    }
 
 export default Cart

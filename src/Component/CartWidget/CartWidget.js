@@ -1,11 +1,11 @@
 import "./CartWidget.css"
 import { useContext } from "react";
-import { context } from "../../App";
+import { CartContext } from "../../context/CarContex";
 import { Link } from "react-router-dom";
 
 const CartWidget= ()=>{
 
-    const {getTotalQuantity} = useContext(context)
+    const {getTotalQuantity} = useContext(CartContext)
 
     const totalProduct = getTotalQuantity()
 
@@ -13,8 +13,11 @@ const CartWidget= ()=>{
         <div>
             <Link to={`/cart`}>
                 <img className="cart" src="/images/cart-removebg-preview.png" alt="cart" />
-            </Link> 
+            </Link > 
+                <span className="badge bg-danger">
+
                 {totalProduct}
+                </span>
         </div>
     )
 };

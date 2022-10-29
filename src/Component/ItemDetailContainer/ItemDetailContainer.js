@@ -31,13 +31,17 @@ const ItemDetailContainer = ()=>{
 
 if(loading){
     return(
-        <h1>Loading...</h1>
+        <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+      </div>
+        
     )
 }
 
     return(
             <div style={{display:'flex',alignItems:'center',flexDirection:'column'}}>
-                <h1>Detalle del producto</h1>
+                <h2>Detalle del producto</h2>
             <ItemDetail  detailProduct= {products} />
             </div>
            

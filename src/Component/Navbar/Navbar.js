@@ -4,10 +4,11 @@ import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import {context} from '../../App'
+import { CartContext } from "../../context/CarContex";
 import { useContext } from "react";
 
 const Navbar = () =>{
-const {cart} = useContext(context)
+const {cart} = useContext(CartContext)
 
     return (
         <nav className="navbar">

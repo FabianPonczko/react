@@ -1,11 +1,13 @@
 import {createContext} from 'react'
-
+import { useState,useEffect } from 'react'
+import swal from 'sweetalert';
 export const CartContext = createContext()
 
 
-export const CartContextProvider = ({chilren})=>{
+export const CartContextProvider = ({children})=>{
 
     const [cart, setCart] = useState([])
+    const [buyer, setBuyer] = useState([])
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [total, setTotal] = useState(0)
     
@@ -66,17 +68,68 @@ export const CartContextProvider = ({chilren})=>{
     }
 
     const getProductToDelete=(id)=>{
-    const cartFilter = cart.filter(prod=>prod.id!==id)
-    setCart(cartFilter)
+        swal({
+            title: "Eliminar producto?",
+            text: "Desea eliminar un producto de la lista",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+                const cartFilter = cart.filter(prod=>prod.id!==id)
+                swal("Producto eliminado!", {
+                    icon: "success",
+                    buttons: false,
+                    timer: 1500,
+                });
+                setCart(cartFilter)
+            } else {
+              swal({
+                text: "Cancelado!",
+                icon: "success",
+                buttons: false,
+                timer: 1500,
+            });
+            }
+          });
+    
     }
 
-    const clearCart = () => {
-        setCart([])
+    const clearCart = (Message) => {
+        Message="clearWithOutMessage"? setCart([])
+        :
+        swal({
+            title: "Esta seguro?",
+            text: "Eliminara todos los productos del carrito!",
+            icon: "warning",
+            showCancelButton: true,
+            buttons: true,
+            dangerMode: true,
+          }).then((isConfirm)=> {
+            if (isConfirm) {
+                swal({
+                    text: "Productos Eliminados!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1500,
+                });
+                setCart([])
+            } else {
+                swal({
+                    text: "Eliminacion Cancelada!",
+                    icon: "success",
+                    buttons: false,
+                    timer: 1500,
+                });
+            }
+          })
+        
       }
 
       return (
-        <CartContext.Provider value={{ cart, addItem, removeItem, getProductQuantity, getTotalQuantity, clearCart, totalQuantity, total }}>
-            {chilren}
+        <CartContext.Provider value={{ cart, addItem, getProductToDelete, getProductQuantity, getTotalQuantity, clearCart, totalQuantity, total ,buyer ,setBuyer}}>
+            {children}
         </CartContext.Provider>
     )
 }

@@ -7,6 +7,7 @@ import {collection, getDocs,query,where} from 'firebase/firestore'
 import { db } from "../../services/firebase"
 
 
+
 const ItemListContainer =({greeting})=>{
     const [products,setProducts] = useState([])
     const [loading,setLoading] = useState(true)
@@ -42,14 +43,17 @@ useEffect(()=>{
 },[categoryId])
 
     if(loading)
-        return <h1>Loading...</h1>
-    
+        return <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+      </div>
+        
 
 
     return(
     
         <div>
-            <h1 style={{display:'flex',justifyContent:'center'}}>{greeting}</h1>    
+            <h2 style={{display:'flex',justifyContent:'center',marginTop:'20px'}}>{greeting}</h2>    
             <h3>{loading}</h3>
             <div style={{display:'flex',justifyContent:'center'}}>
                 {categoryId?<h3>{categoryId}</h3>:null}
