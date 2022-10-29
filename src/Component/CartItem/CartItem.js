@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import { useState, useContext, useEffect } from "react";
+import { useContext } from "react";
 import { CartContext } from "../../context/CarContex";
 
 

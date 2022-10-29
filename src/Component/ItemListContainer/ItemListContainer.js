@@ -1,12 +1,8 @@
 import { useState ,useEffect } from "react"
-// import { getProducts } from "../asyncMock/asyncMock"
 import ItemList from "../ItemList/ItemList"
-import './ItemListContainer.css'
 import {useParams } from "react-router-dom"
 import {collection, getDocs,query,where} from 'firebase/firestore'
 import { db } from "../../services/firebase"
-
-
 
 const ItemListContainer =({greeting})=>{
     const [products,setProducts] = useState([])
@@ -17,12 +13,7 @@ useEffect(()=>{
     setLoading(true)
     const collectionRef= categoryId ? query( collection(db,'products'),where('category', '==',categoryId)) : collection(db,'products')
     
-    
-    // query( collection(db,'products'),where('category', '==',categoryId))
-    // collection(db,'products')
-
-    getDocs(collectionRef).then(response=>{
-        
+    getDocs(collectionRef).then(response=>{    
         const productsAdapted = response.docs.map(doc =>{
             const data = doc.data()
             return { id: doc.id, ...data}
@@ -31,15 +22,6 @@ useEffect(()=>{
     }).finally(()=>{
         setLoading(false)
     })
-    // getProducts(categoryId).then(products =>{
-    //     setProducts(products)    
-    // }
-    // ).catch(error=>{
-    //     console.log(error)
-    // })
-    // .finally(() =>{
-    //     setLoading(false)
-    // })
 },[categoryId])
 
     if(loading)
@@ -48,8 +30,6 @@ useEffect(()=>{
         <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
       </div>
         
-
-
     return(
     
         <div>

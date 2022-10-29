@@ -2,13 +2,10 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Button} from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Item = ({prod})=>{
-
-
     return(
         <div className='text-center' > 
              <Container >
@@ -26,8 +23,7 @@ const Item = ({prod})=>{
                         </Card>
                     </Col>
                 </Row>
-            </Container>
-            
+            </Container>   
         </div>
     )
 }

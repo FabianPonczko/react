@@ -1,6 +1,5 @@
 import Item from "../Item/Item"
 
-
 const ItemList = ({products}) =>{
     
     return (

@@ -1,6 +1,4 @@
-import { Card } from "react-bootstrap";
-import { useState, useContext, useEffect } from "react";
-// import { context } from "../../App";
+import {useContext} from "react";
 import { CartContext } from "../../context/CarContex";
 import CartItem from "../CartItem/CartItem";
 import { Link } from "react-router-dom";
@@ -8,12 +6,6 @@ import { Link } from "react-router-dom";
 
 const Cart = ()=>{
     const {cart, clearCart, totalQuantity , total} = useContext(CartContext)
-   
-console.log(`llego cart:${cart}`)
-   
-    // useEffect(()=>{
-    //     console.log({cart})
-    // },[cart])
 
     if(totalQuantity  === 0) {
         return (
@@ -37,7 +29,6 @@ console.log(`llego cart:${cart}`)
             <button className="shadow d-grid col-2 mx-auto btn btn-warning"onClick={() => clearCart()} >Limpiar carrito</button>
         </div>
         </div>
-
         
     )
     }

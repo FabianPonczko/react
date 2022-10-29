@@ -2,8 +2,7 @@
 import "./Navbar.css"
 import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom";
-import { Button, Form } from "react-bootstrap";
-import {context} from '../../App'
+import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/CarContex";
 import { useContext } from "react";
 
