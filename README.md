@@ -27,3 +27,4 @@ products:{
     altimg:"string"
 }
 
+Generar sus propias variables de entorno

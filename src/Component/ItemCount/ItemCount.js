@@ -14,16 +14,20 @@ const ItemCount = ({inicial=1,stock,onAdd}) =>{
             setQuantity(quantity - 1)
         }
     }
-    
+    console.log({stock})
     
     return (
             <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
-                <h3>{quantity}</h3>
-               <div  style={{display:'flex', marginBottom:'2px'}} className="gap-2" >
-                    <button className="col-2 mx-auto btn btn-primary" onClick={increment} >+</button>
-                    <button className="col-2 mx-auto btn btn-primary" onClick={decrement} >-</button>
-               </div>
+                {stock>0?
+                    <div>
+                    <h3>{quantity}/{stock}</h3>
+                    <div  style={{display:'flex', marginBottom:'2px'}} className="gap-2" >
+                        <button className="col-2 mx-auto btn btn-primary" onClick={increment} >+</button>
+                        <button className="col-2 mx-auto btn btn-primary" onClick={decrement} >-</button>
+                    </div>
                     <button className="mb-1 col mx-auto btn btn-primary " onClick={()=> onAdd(quantity)}>Agregar</button>
+                    </div>
+                :<h3 style={{color:'red'}}>Sin stock</h3>}
             </div>
     )
 }

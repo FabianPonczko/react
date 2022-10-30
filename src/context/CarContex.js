@@ -11,7 +11,6 @@ export const CartContextProvider = ({children})=>{
     const [totalQuantity, setTotalQuantity] = useState(0)
     const [total, setTotal] = useState(0)
     
-
     useEffect(() => {
         const totalQuantity = getTotalQuantity()
         setTotalQuantity(totalQuantity)
@@ -45,11 +44,9 @@ export const CartContextProvider = ({children})=>{
 
     const getTotal = () => {
         let accu = 0
-  
         cart.forEach(prod => {
             accu += prod.quantity * prod.price
         })
-  
         return accu
       }
 
