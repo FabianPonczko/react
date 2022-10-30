@@ -37,6 +37,12 @@ Generar sus propias variables de entorno
 
 # Cuarto paso
 
+```sh
+npm start
+```
+
+# Quinto paso
+
 Abrir el navegador en:
 ```sh
 http://localhost:3000/
