@@ -1,4 +1,6 @@
-# Projecto de e-commerce en Reacts
+# Projecto de e-commerce
+
+## _Aplicando todo lo aprendido en el curso de Reacts_
 
 # Primeros pasos
 
@@ -35,3 +37,9 @@ Abrir el navegador en:
 ```sh
 http://localhost:3000/
 ```
+
+## License
+
+Roberto Ponczko.
+
+**Free Software, solo para pruebas!**
