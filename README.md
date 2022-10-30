@@ -33,5 +33,5 @@ Generar sus propias variables de entorno
 
 Abrir el navegador en:
 ```sh
-127.0.0.1:3000
+http://localhost:3000/
 ```
