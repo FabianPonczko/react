@@ -17,17 +17,21 @@ Instalar dependencias:
 
 Generar base de datos en Firebase:
 
-formato de productos:
+## formato de productos:
 
-products:{
-    title:"string",
-    category:"string",
-    description:"string",
-    img:"http://imagen",
-    price:"number",
-    stock:"number",
-    altimg:"string"
-}
+Generar una colección en firestore con el nombre de products 
+de la siguiente manera:
+
+| clave | valor |
+| ------ | ------ |
+| title | string |
+| category| string |
+| description | string |
+| img | [http://imagen] |
+| price | number |
+| stock | number |
+| altimg | string |
+
 
 Generar sus propias variables de entorno
 
