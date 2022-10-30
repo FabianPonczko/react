@@ -21,6 +21,7 @@ const Checkout = () => {
             }
     
             const ids = cart.map(prod => prod.id)
+            
             const productsRef = collection(db, 'products')
     
             const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in' , ids)))
@@ -81,10 +82,12 @@ const buyerData =()=> {
             <div className="card-body">
             <div className="card-text">
                 <p>Nombre: <span className="fst-italic">{buyer.name}</span></p>
-                <p>Telefono: <span className="fst-italic"> {buyer.phone}</span></p>
+                <p>Teléfono: <span className="fst-italic"> {buyer.phone}</span></p>
                 <p>Email: <span className="fst-italic">{buyer.email}</span></p>
             </div>
-                {cart.length? <button className=" d-grid col-12 btn btn-success mb-1 fs-4" onClick={createOrder}>Generar pedido</button>:<button className=" d-grid col-12 btn btn-danger mb-1 fs-4">Carrito Vacio</button>}
+                {cart.length?
+                <button className=" d-grid col-12 btn btn-success mb-1 fs-4" onClick={createOrder}>Generar pedido</button>
+                :<button className=" d-grid col-12 btn btn-danger mb-1 fs-4">Carrito Vacio</button>}
             </div>
         </Card>
         </div>
