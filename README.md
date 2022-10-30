@@ -1,4 +1,4 @@
-# Projecto de ecomerce en Reacts
+# Projecto de e-commerce en Reacts
 
 # Primeros pasos
 
@@ -7,9 +7,9 @@ Clonar el repositorio
 
 # Segundo paso
 
-Instalar dependencias.
- -sweetalert2
- -bootstrap
+Instalar dependencias:
+ - [sweetalert2]
+ - [bootstrap]
 
 # Tercer paso
 
@@ -28,3 +28,10 @@ products:{
 }
 
 Generar sus propias variables de entorno
+
+# Cuarto paso
+
+Abrir el navegador en:
+```sh
+127.0.0.1:3000
+```
