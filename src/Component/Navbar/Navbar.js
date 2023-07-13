@@ -12,28 +12,30 @@ const {cart,buyer} = useContext(CartContext)
     return (
         <nav className="navbar">
             <div>
-                <Link style= {{color:'white'}}to='/'>
+                <Link style= {{color:'tomato'}}to='/'>
                     <h1>FoxX-Computación</h1>
                 </Link>
             </div>
             <div className="btn">
-                <Link to={"/category/Monitores"}>
-                    <Button>
+                <Link to={"/category/Monitores"} className="button">
+                    {/* <Button > */}
                         Monitores
-                    </Button>
+                    {/* </Button> */}
                 </Link>
-                <Link to={"/category/Teclados"}>
-                    <Button>
+                <Link to={"/category/Teclados"}className="button">
+                    {/* <Button> */}
                         Teclados
-                    </Button>
+                    {/* </Button> */}
                 </Link>
-                <Link to={"/category/Notebooks"}>
-                    <Button>
+                <Link to={"/category/Notebooks"}className="button">
+                    {/* <Button> */}
                         Notebooks
-                    </Button>
+                    {/* </Button> */}
                 </Link>
-                <Link to={"/category/Placas"}>
-                    <Button>Placas</Button>
+                <Link to={"/category/Placas"}className="button">
+                    {/* <Button> */}
+                        Placas
+                    {/* </Button> */}
                 </Link>
             </div>
             <CartWidget count={cart}/>

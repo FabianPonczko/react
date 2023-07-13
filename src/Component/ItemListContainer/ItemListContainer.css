@@ -1,0 +1,22 @@
+.greeting{
+    /* margin:25px; */
+    width: 1280px;
+    padding:5px;
+    color:white;
+    background: rgb(54, 44, 130, 0.9);
+    border-Radius: 5px;
+    display:flex;
+    justify-Content:center;
+    margin-Top:20px;
+    font-Size: 20px;
+    font-family:'Times New Roman', Times, serif
+}
+.side{
+    display:flex;
+    background-color: aliceblue;
+    
+}
+.products{
+    background-color: antiquewhite;
+    max-width: 1100px;
+}

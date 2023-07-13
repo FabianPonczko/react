@@ -1,0 +1,8 @@
+.categoryBar{
+    width: 10%;
+    max-height: 80%;
+    margin-left: 1rem;
+}
+.categoryBar ul{
+    list-style: none;
+}

@@ -7,6 +7,7 @@ import {BrowserRouter, Routes,Route} from 'react-router-dom'
 import Cart from './Component/Cart/Cart';
 import Checkout from './Component/Checkout/Checkout';
 import { CartContextProvider } from './context/CarContex'
+import SideBar from './Component/Sidebar/SideBar';
 
 
 function App() {
