@@ -2,6 +2,7 @@
     width: 10%;
     max-height: 80%;
     margin-left: 1rem;
+    border-right: 2px solid rgba(50,50,50,.2);
 }
 .categoryBar ul{
     list-style: none;

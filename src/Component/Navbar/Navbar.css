@@ -6,6 +6,12 @@
     background-color:rgb(41, 7, 5);
     color: rgb(214, 107, 25);
     font-family: 'Times New Roman ,Times, serif';
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+.navbar span{
+    color:#fff
 }
 .btn {
     display:flex;

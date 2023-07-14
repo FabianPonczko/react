@@ -32,7 +32,7 @@ useEffect(()=>{
         
     return(
     
-        <div>
+        <div className="item-list">
             {greeting?<h2 className="greeting">{greeting}</h2>:null }
             {/* <h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(117, 57, 121, 0.988)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "25px"}}>{greeting}</h2>     */}
             <h3>{loading}</h3>

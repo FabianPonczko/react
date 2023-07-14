@@ -13,7 +13,7 @@ const {cart,buyer} = useContext(CartContext)
         <nav className="navbar">
             <div>
                 <Link style= {{color:'tomato'}}to='/'>
-                    <h1>FoxX-Computación</h1>
+                    <h1><span>FoxX</span>Computación</h1>
                 </Link>
             </div>
             <div className="btn">
