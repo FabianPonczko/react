@@ -1,9 +1,18 @@
 .categoryBar{
-    width: 10%;
     max-height: 80%;
     margin-left: 1rem;
-    border-right: 2px solid rgba(50,50,50,.2);
+    /* border-right: 1px solid rgba(50,50,50,.2); */
+    /* padding: 10px; */
+    display: flex;
+    
+    
+    
 }
 .categoryBar ul{
     list-style: none;
 }
+
+.category-li{
+    display: flex;
+}
+

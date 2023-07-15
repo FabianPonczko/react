@@ -1,8 +1,8 @@
 .container{
     display:flex;
-    width:90%;
-    gap:1rem;
-    justify-Content:center ;
+    /* width:90%; */
+    gap:5px;
+    justify-Content:flex-start;
     align-Items:center;
-    flex-Wrap:wrap
+    flex-wrap:wrap;
 }

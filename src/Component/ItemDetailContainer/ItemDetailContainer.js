@@ -7,6 +7,7 @@ const ItemDetailContainer = ()=>{
     const [products,setProducts] = useState([])
     const [loading,setLoading] = useState(true)
     const {productId} = useParams()
+    
 
     useEffect(()=>{
         getProductId(productId).then(products=>{
@@ -17,6 +18,8 @@ const ItemDetailContainer = ()=>{
             setLoading(false)
           })
     },[productId])
+
+  
 
 if(loading){
     return(

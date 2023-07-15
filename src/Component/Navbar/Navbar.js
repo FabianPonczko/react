@@ -4,13 +4,24 @@ import CartWidget from "../CartWidget/CartWidget"
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { CartContext } from "../../context/CarContex";
-import { useContext } from "react";
+import { useContext ,useEffect,useState } from "react";
+
 
 const Navbar = () =>{
 const {cart,buyer} = useContext(CartContext)
+const [sticky,setSticky] = useState(false)
+
+useEffect(()=>{
+   
+    const handleScroll =()=>{
+      setSticky(window.scrollY > 100)
+    }
+    window.addEventListener("scroll",handleScroll)
+    return ()=> window.removeEventListener("scroll",handleScroll)
+  },[])
 
     return (
-        <nav className="navbar">
+        <nav className="navbar" id={sticky?"sticky":null}>
             <div>
                 <Link style= {{color:'tomato'}}to='/'>
                     <h1><span>FoxX</span>Computación</h1>

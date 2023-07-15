@@ -6,9 +6,21 @@
     background-color:rgb(41, 7, 5);
     color: rgb(214, 107, 25);
     font-family: 'Times New Roman ,Times, serif';
-    width: 100%;
+    width: 100vw;
     position: fixed;
     z-index: 1;
+    transition: height .1s;
+    height: 100px;
+    
+}
+#sticky{
+    /* display: flex; */
+    align-content: center;   
+    transition: height .2s;
+    height: 40px;
+
+   
+ 
 }
 .navbar span{
     color:#fff
@@ -18,15 +30,17 @@
     align-items: center;
     gap:30px;
 }
+
 .btn .button{
     border-radius: 15px;
-    /* padding:5px 15px ; */
+    padding:5px 5px ;
     /* background-color: rgba(117, 57, 121, 0.988); */
-    color:rgb(243, 243, 236)
+    color:rgb(243, 243, 236) 
 }
+.btn .button:hover{
+    transform:scale(1.1)
+}
+
 a:link{
     text-decoration: none;
-}
-.footer{
-    bottom: 10px;
 }

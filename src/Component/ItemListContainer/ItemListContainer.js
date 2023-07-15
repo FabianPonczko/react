@@ -24,30 +24,34 @@ useEffect(()=>{
   
 },[categoryId])
 
-    if(loading)
-        return <div className="d-flex align-items-center">
-        <strong>Loading...</strong>
-        <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-      </div>
+    // if(loading)
+    //     return  <div className="d-flex align-items-center">
+    //               <strong>Loading...</strong>
+    //               <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+    //             </div>
         
-    return(
-    
-        <div className="item-list">
-            {greeting?<h2 className="greeting">{greeting}</h2>:null }
-            {/* <h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(117, 57, 121, 0.988)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "25px"}}>{greeting}</h2>     */}
-            <h3>{loading}</h3>
-            <div>
-                {categoryId?<h3 className="greeting">{categoryId}</h3>:null}
-            </div>
-            <div className="side">
-              <SideBar/>
-              <div className="products">
-              <ItemList products={products} />
-              </div>
 
-            </div>
+
+
+    
+    return(
+      
+      <div className="item-list">
+      {greeting?<h2 className="greeting">{greeting}</h2>:null }
+        {/* <h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(117, 57, 121, 0.988)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "25px"}}>{greeting}</h2>     */}
+        <h3>{loading}</h3>
+        <div>
+            {categoryId?<h3 className="greeting">{categoryId}</h3>:null}
+        </div>
+        <div className="side">
+          <SideBar/>
+          <div className="products">
+            <ItemList products={products} />
+          </div>
 
         </div>
+
+    </div>
     )
 }
 
