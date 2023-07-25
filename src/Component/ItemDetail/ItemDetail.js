@@ -4,7 +4,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import { CartContext } from "../../context/CarContex"
 import swal from 'sweetalert';
 import { Link } from "react-router-dom";
-
+import './ItemDetail.css'
 
 const ItemDetail = ({detailProduct})=>{
     const [productToAdd,setProductToAdd] = useState(detailProduct)
@@ -31,7 +31,7 @@ const productAddedQuantity = getProductQuantity(id)
 
 return (
         <div className='text-center' style={{display:'flex',gap:'15px'}}>
-            <Card key= {productToAdd.id} style={{ width: '16rem '}}>
+            <Card  key= {productToAdd.id} style={{ width: '16rem ',border:"none",marginTop:"10px"}}>
                 <Card.Img variant="top" src={productToAdd.img} />
                 <Card.Body>
                     <Card.Title></Card.Title>

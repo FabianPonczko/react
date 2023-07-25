@@ -22,10 +22,13 @@ const ItemCount = ({inicial=1,stock,onAdd}) =>{
                     <div>
                     <h3>{quantity}/{stock}</h3>
                     <div  style={{display:'flex', marginBottom:'2px'}} className="gap-2" >
-                        <button className="col-2 mx-auto btn btn-primary" onClick={increment} >+</button>
-                        <button className="col-2 mx-auto btn btn-primary" onClick={decrement} >-</button>
+                        <button className="card-btn" onClick={increment} >+</button>
+                        {/* <button className="col-2 mx-auto btn btn-primary" onClick={increment} >+</button> */}
+                    <button className="card-btn " onClick={()=> onAdd(quantity)}>Agregar</button>
+                        <button className="card-btn" onClick={decrement} >-</button>
+                        {/* <button className="col-2 mx-auto btn btn-primary" onClick={decrement} >-</button> */}
                     </div>
-                    <button className="mb-1 col mx-auto btn btn-primary " onClick={()=> onAdd(quantity)}>Agregar</button>
+                    {/* <button className="mb-1 col mx-auto btn btn-primary " onClick={()=> onAdd(quantity)}>Agregar</button> */}
                     </div>
                 :<h3 style={{color:'red'}}>Sin stock</h3>}
             </div>

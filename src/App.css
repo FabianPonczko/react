@@ -1,11 +1,11 @@
 .App {
   text-align: center;
 }
-.ItemList{
+.ItemList-Principal{
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 100vw;
+  width: 100%;
   /* flex-direction: column; */
+  min-height: 80vh;
   
 }

@@ -51,7 +51,7 @@ useEffect(()=>{
             </div>
             <CartWidget count={cart}/>
             <Link to={"/checkout"}>
-            {!buyer.name?null:<img style={{background:"white",borderRadius:"5px", display:'block',position:'absolute',bottom:'10px',right:"15px"}}src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/000000/external-user-user-tanah-basah-basic-outline-tanah-basah-3.png"  height="20" width="20"/>}
+            {!buyer.name?null:<img style={{background:"white",borderRadius:"5px", position:'absolute',bottom:'10px',right:"15px"}}src="https://img.icons8.com/external-tanah-basah-basic-outline-tanah-basah/24/000000/external-user-user-tanah-basah-basic-outline-tanah-basah-3.png"  height="20" width="20"/>}
             </Link>
             
         </nav>

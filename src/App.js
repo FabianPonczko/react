@@ -18,7 +18,7 @@ function App() {
       <CartContextProvider>
         <BrowserRouter>  
             <Navbar /> 
-            <div className="ItemList">
+            <div className="ItemList-Principal">
               <Routes>
                   <Route path='/' element={<ItemListContainer greeting="- Productos Seleccionados -"/> } />
                   <Route path='/category/:categoryId' element={<ItemListContainer />} />

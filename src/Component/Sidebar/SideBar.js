@@ -5,12 +5,9 @@ import { Link } from 'react-router-dom'
 
 let cat=[]
 
-function SideBar() {
+function SideBar({categoryId="todos"}) {
     const [category,SetCategory]=useState([])
     const [selectCategory,setSelectCategory]=useState("todos")
-    
-
-
 
     const getCategory = (products)=>{
         let newpro = products.map((item)=>{
@@ -32,30 +29,27 @@ function SideBar() {
         getProducts().then(products=>{
             getCategory(products)
             SetCategory(cat)
-
+            console.log(selectCategory);
           }).catch(error=>{
             console.log("error",error)
           }).finally(()=>{
           })
-    },[selectCategory])
-
-
+          setSelectCategory(categoryId)
+    },[selectCategory,categoryId])
 
   return (
     <div className='categoryBar'>
         <span>Categorias</span>
         <ul>
             <Link to={"/"} onClick={()=>handleClick("todos")}>
-                {selectCategory==="todos"?<span style={{color:"tomato"}}>Todos</span>:"Todos"} 
+                {selectCategory==="todos"?<li style={{color:"#1B2631",scale:"120%"}}>Todos</li>:<li>Todos</li>} 
             </Link>
            
             {cat.map(item=>{
                 return (
                     <div className='category-li' key={item} >
-                            
                         <Link to={`/category/${item}`} onClick={()=>handleClick(item)} >
-                                {selectCategory===item?<span style={{color:"tomato"}}>{item}</span>:item}  
-                                
+                                {selectCategory===item?<li style={{color:"#1B2631",scale:"120%"}}>{item}</li>:<li>{item}</li>}  
                         </Link> 
                     </div>
                 )  

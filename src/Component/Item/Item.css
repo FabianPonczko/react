@@ -1,0 +1,41 @@
+#card-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #808b9627;
+    border-radius: 5px;
+    padding: 10px 0;     
+    transition: border-color .3s;   
+
+}
+
+#card-container:hover{
+    border-color: #939698;
+    transition: border-color .2s;   
+}
+
+#card{
+    display: flex;
+    justify-content: flex-end;
+    border:none;
+    transition: all 0.5s;
+    color: #939698;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.card-btn{
+    position: relative;
+    margin: auto;
+    color: aliceblue;
+    padding:1px 30px;
+    border-radius: 5px;
+    background-image: linear-gradient(45deg,tomato,#808B96);
+   
+}
+
+.card-btn:hover{
+    background-image: linear-gradient(45deg,#808B96,rgba(255, 0, 0, 0.7));
+   
+}
+

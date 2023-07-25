@@ -14,8 +14,7 @@ const CartWidget= ()=>{
             <Link to={`/cart`}>
                 <img className="cart" src="/images/cart-removebg-preview.png" alt="cart" />
             </Link > 
-                <span className="badge bg-danger">
-
+                <span className="badge " id="badge-count">
                 {totalProduct}
                 </span>
         </div>

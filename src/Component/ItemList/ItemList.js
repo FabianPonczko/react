@@ -5,23 +5,36 @@ import './ItemList.css'
 const ItemList = ({products}) =>{
     
     const [loading,setLoading] = useState(true)
-
+    console.log(products)
     useEffect(()=>{
      
         // setLoading(false) 
     },[products])
 
-    if(!products)
-        return  <div className="d-flex align-items-center">
-                  <strong>Loading...</strong>
-                  <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
-                </div>
-    return (
 
-        <div className="container">
-            {products.map(product=> (
-                <Item key= {product.id} prod= {product}/>
-            ))}
+
+    if(!products)
+        return  <div className="ItemList">
+                    <div className="container">
+                    <Item key= {1}/>
+                    <Item key= {2}/>
+                    <Item key= {3}/>
+                    <Item key= {4}/>
+                    <Item key= {5}/>
+                    <Item key= {6}/>
+                    <Item key= {7}/>
+                    <Item key= {8}/>
+                    </div>
+                </div>
+
+// "../images/loading.gif"
+    return (
+        <div className="ItemList">
+            <div className="container">
+                {products.map(product=> (
+                    <Item key= {product.id || product} prod= {product}/>
+                    ))}
+            </div>
         </div>
        
     )

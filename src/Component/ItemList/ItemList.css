@@ -1,8 +1,8 @@
-.container{
+ .ItemList .container{
+    /* position: relative;  */
     display:flex;
-    /* width:90%; */
-    gap:5px;
-    justify-Content:flex-start;
+    gap:10px;
+    justify-content:flex-start;
     align-Items:center;
-    flex-wrap:wrap;
-}
+    flex-wrap: wrap;
+} 

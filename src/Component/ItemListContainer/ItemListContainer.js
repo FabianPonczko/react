@@ -4,6 +4,7 @@ import {useParams } from "react-router-dom"
 import { getProducts } from "../../services/firebase/firestore"
 import './ItemListContainer.css'
 import SideBar from "../Sidebar/SideBar"
+import Item from "../Item/Item"
 
 
 const ItemListContainer =({greeting})=>{
@@ -30,25 +31,36 @@ useEffect(()=>{
     //               <div className="spinner-border ms-auto" role="status" aria-hidden="true"></div>
     //             </div>
         
+  
 
+   
+    if(loading)
+      return(
+        <div className="item-list-container">
+            {greeting?<h2 className="greeting">{greeting}</h2>:null }
+            {categoryId?<h3 className="greeting">{categoryId}</h3>:null}
+          <div className="main">
+            <SideBar categoryId={categoryId}/>
+            <ItemList />
+            
+            </div>
+        </div>
+      )
 
 
     
     return(
       
-      <div className="item-list">
+      <div className="item-list-container">
       {greeting?<h2 className="greeting">{greeting}</h2>:null }
         {/* <h2 style={{margin:'25px', padding:'5px',color:'white',background: 'rgb(117, 57, 121, 0.988)',borderRadius: '5px', display:'flex',justifyContent:'center',marginTop:'20px',fontFamily: 'Times New Roman ,Times, serif',fontSize: "25px"}}>{greeting}</h2>     */}
-        <h3>{loading}</h3>
+        {/* <h3>{loading}</h3> */}
         <div>
             {categoryId?<h3 className="greeting">{categoryId}</h3>:null}
         </div>
-        <div className="side">
-          <SideBar/>
-          <div className="products">
-            <ItemList products={products} />
-          </div>
-
+        <div className="main">
+          <SideBar categoryId={categoryId}/>
+          <ItemList products={products} />
         </div>
 
     </div>

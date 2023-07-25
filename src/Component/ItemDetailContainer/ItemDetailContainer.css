@@ -1,0 +1,11 @@
+ .item-detail .conteiner{
+    display:flex;
+    align-Items:center;
+    flex-Direction: column;
+    margin-top: 150px;
+} 
+
+.item-detail .conteiner .title{
+    font-Family: 'Times New Roman ,Times, serif';
+    font-Size: 35px
+}
