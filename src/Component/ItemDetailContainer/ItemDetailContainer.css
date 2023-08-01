@@ -5,6 +5,15 @@
     margin-top: 150px;
 } 
 
+.item-detail .conteiner .volver{
+    position: absolute;
+    top:120px;
+    left: 50px;
+}
+.item-detail .conteiner a {
+    color: grey;
+  }
+  
 .item-detail .conteiner .title{
     font-Family: 'Times New Roman ,Times, serif';
     font-Size: 35px

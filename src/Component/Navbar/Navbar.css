@@ -11,8 +11,9 @@
     z-index: 1;
     transition: height .1s;
     height: 100px;
-    
+
 }
+
 #sticky{
     /* display: flex; */
     align-content: center;   
